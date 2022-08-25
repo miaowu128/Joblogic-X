@@ -38,7 +38,7 @@ In auto-coaching mode, the animation to the right shows the joints of students, 
 ### Competition Mode
 In competition mode, the animation to the right shows the joints of the teacher and two competing students, with blue joints in the animation representing the movements of the teacher. 
 
-![](https://github.com/miaowu128/Joblogic-X/blob/b104064e28ca7e387128c019be683984d618faf3/gif_demo/gifs/output_compete_2_cut.gif))
+![](https://github.com/miaowu128/Joblogic-X/blob/b104064e28ca7e387128c019be683984d618faf3/gif_demo/gifs/output_compete_2_cut.gif)
 
 
 # License
