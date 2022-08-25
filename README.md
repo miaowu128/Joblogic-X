@@ -22,6 +22,7 @@ This directory contains the backbone algorithms for exercise coaching and codes 
 2. rule_based: codes for generate demo of rule based. The code structure is similar to auto_score
 3. Group2-Project2-Final Report.pdf: the final report for this project
 # Demo
-![](https://github.com/miaowu128/Joblogic-X/blob/39aee78e875452092f532052f75a2597cc187328/gif_demo/gifs/test3.gif)
+![](https://github.com/miaowu128/Joblogic-X/blob/23ab2cee6f7c661902f6bae447e9222a7f8c7081/gif_demo/gifs/test3.gif)
+
 # License
 This project is licensed under the terms of the MIT license
