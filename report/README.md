@@ -199,7 +199,7 @@ https://www.bodybuilding.com/exercises/finder/?equipment=dumbbell
 https://github.com/SravB/Computer-Vision-Weightlifting-Coach
 
 ## Appendix B – Interview transcripts
- 	A	B	C
+
 Gender	Male	Female	Female
 Age	59	57	27
 Fitness Frequency	7/week	3-4/week	4/week
