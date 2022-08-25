@@ -1,5 +1,5 @@
 # Joblogic-X
-This is a repository that contain the code for two data science projects (recommender systems and computer vision) while working for Joblogic-X.
+This is a repository that contain the codes for the computer vision projects for Joblogic-X.
 
 # Instruction 
 This directory contains the backbone algorithms for exercise coaching and codes used to generate the demo. There are three inputs:
