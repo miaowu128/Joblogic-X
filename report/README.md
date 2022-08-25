@@ -129,6 +129,8 @@ In the GIFs below, we demonstrate the implementation of the three functions resp
 ## Rule-based-coaching Mode
 In rule-base-coaching mode, the animation in the middle shows the joints of students, whose video is to the right. Corresponding body part will turn red when the movements of this part violate the pre-defined rules.
 
+![](https://github.com/miaowu128/Joblogic-X/blob/860cf55a8889e936eea9a3d76b922b9a372a6e03/gif_demo/gifs/test4_cut.gif)
+
 ## Auto-coaching Mode
 In auto-coaching mode, the animation to the right shows the joints of students, whose video is in the middle. The red joints in the animation represent the movements of students, while the blue joints in the animation represent the movements of the teacher. The speed, importance, and evaluation score of student’s movements can also be found in the animation.
  
