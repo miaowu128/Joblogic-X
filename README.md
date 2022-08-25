@@ -8,7 +8,7 @@ This directory contains the backbone algorithms for exercise coaching and codes 
 3. 3D pose estimation
 2D pose and 3D pose models refer to the pre-trained model, VideoPose3D (https://github.com/facebookresearch/VideoPose3D)
 
-# directory and files
+# Directory and files
 1. auto_score: codes for generate demo of autoScore or competition. 
     + commom: codes for preprocess (most comes from VideoPose3D)
     + input_video: the videos for input
