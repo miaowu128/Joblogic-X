@@ -21,7 +21,8 @@ This directory contains the backbone algorithms for exercise coaching and codes 
     + competition.py: code generating demo of competition. To run just type: `python competition.py`
 2. rule_based: codes for generate demo of rule based. The code structure is similar to auto_score
 3. Group2-Project2-Final Report.pdf: the final report for this project
-# Demo
+# Demo Sample (Please refer to the full report for more demo)
+Below shows the animation of rule-base-coaching mode. The animation in the middle shows the joints of students, whose video is to the right. 
 ![](https://github.com/miaowu128/Joblogic-X/blob/23ab2cee6f7c661902f6bae447e9222a7f8c7081/gif_demo/gifs/test3.gif)
 
 # License
