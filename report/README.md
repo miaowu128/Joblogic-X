@@ -128,25 +128,27 @@ In the GIFs below, we demonstrate the implementation of the three functions resp
 
 ## Rule-based-coaching Mode
 In rule-base-coaching mode, the animation in the middle shows the joints of students, whose video is to the right. Corresponding body part will turn red when the movements of this part violate the pre-defined rules.
-
+![](https://github.com/miaowu128/Joblogic-X/blob/b104064e28ca7e387128c019be683984d618faf3/gif_demo/gifs/test3.gif)
 ![](https://github.com/miaowu128/Joblogic-X/blob/860cf55a8889e936eea9a3d76b922b9a372a6e03/gif_demo/gifs/test4_cut.gif)
 
 ## Auto-coaching Mode
 In auto-coaching mode, the animation to the right shows the joints of students, whose video is in the middle. The red joints in the animation represent the movements of students, while the blue joints in the animation represent the movements of the teacher. The speed, importance, and evaluation score of student’s movements can also be found in the animation.
+![](https://github.com/miaowu128/Joblogic-X/blob/b104064e28ca7e387128c019be683984d618faf3/gif_demo/gifs/output_bl_teacher_good_student_2_compare_cut.gif)
+
+![](https://github.com/miaowu128/Joblogic-X/blob/b104064e28ca7e387128c019be683984d618faf3/gif_demo/gifs/output_bl_teacher_bad_student_2_compare_cut.gif)
  
 ## Competition Mode
 In competition mode, the animation to the right shows the joints of the teacher and two competing students, with blue joints in the animation representing the movements of the teacher. 
+
+![](https://github.com/miaowu128/Joblogic-X/blob/b104064e28ca7e387128c019be683984d618faf3/gif_demo/gifs/output_compete_2_cut.gif))
+
 
 ## Time Complexity
 The code is running on a desktop equipped with a GTX 1080 GPU. For the first step (2D pose detection), the speed is about 0.15 second per frame.  For a 30 second video with 30 fps, it will take 135 seconds to finish.  For the second step (3D pose estimation), the speed is about 0.1 seconds per frame. It will take  90 seconds to transform a 30 seconds video with 30 fps.
 
 ## Accuracy Evaluation
 
-Score	Round 1	Round 2	Round 3	Round 4	Round 5	Avg score
-Good Student 1	77	51	40	72	69	62
-Good Student 2	37	63	41	90	42	55
-Bad Student 1	45	26	31	51	77	46
-Bad Student 2	53	65	46	41	36	48
+![](https://github.com/miaowu128/Joblogic-X/blob/b104064e28ca7e387128c019be683984d618faf3/gif_demo/pictures/Picture10.jpg)
 
 In order to evaluate the performance of our algorithm, we input the videos of four people: good student 1, good student 2, bad student 1 and bad student 2. Good student 1 and bad student 1 work out on the same exercise, while the other two work out on the same exercise. On average, the scores of good students are higher. Our algorithm works.   
 
