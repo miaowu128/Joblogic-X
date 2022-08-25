@@ -77,6 +77,8 @@ The second function, namely, competition mode, is to provide companionship and a
 # Product interface
 The main interface in the app shows users’ daily training schedule. For each of the sessions, users are free to set up the time, training sets, training duration and training mode by themselves. Before starting the training set, users can review the details of the training in the ‘training details’ section and add or make changes to the training set. The training mode can either be solo mode, or competing mode. In competing mode, users can send invitations to the other app users to ask them to schedule a time to workout together. The details of these two modes will be shown in the next section. Time can be set for each of the sessions so the notification can be sent to remind the users to stick with their training plans. Our app will also record users activities and give suggestions based on users’ needs and exercise habits.
 
+![](https://github.com/miaowu128/Joblogic-X/blob/main/gif_demo/pictures/Picture4.png)
+
 ## Solo mode and competing mode interface
 The figure below shows the solo mode (left) and competing mode (right) interface separately. 
 
@@ -84,7 +86,8 @@ In solo mode, we will focus on the pos/movement correction for the users. With t
 
 As for competing mode, we focus more on the participants’ poses and movement so the coaches’ video is placed on the top right corner of the screen. With the similar recognition technique, we will record how fast and accurately the training sessions are finished and provide grades for each of the participants. For both of the modes, more details like the training time, pose scores, targets of the training etc. would be recorded after the training session are done so users can keep track on their training progress and health status.
 
- 
+![](https://github.com/miaowu128/Joblogic-X/blob/main/gif_demo/pictures/Picture5.png)
+
 # Product technical solution design
 ## Data
 As exercisers use our module, their videos will be uploaded to our online servers to be compared with the videos of the coaches that users are learning from. The input of our module are videos in mp4 format and the output are mp4/gif files with the exercise scores added to every frame of  the original video. An average score across the video will also be generated and sent to the backend for users’ progress record.
@@ -99,14 +102,18 @@ By auto-coaching, we aim to construct a scoring system that can automatically co
 
 To implement this auto-coaching module, we first utilize our backbone algorithm to extract the 3D joints of the teacher and the students. Once complete, a numpy array of 3D keypoints across all frames is created and saved to a file. The array will be of size num_framesx17x3, since we have a matrix of keypoints for each frame, there are 17 joints that are being detected, and we are detecting 3D coordinates, hence a 3 at the end. Here is a rough diagram that outlines the 3D coordinates being detected in each frame, indexed by the joints 0-based index location in the array [1]. 
  
+![](https://github.com/miaowu128/Joblogic-X/blob/main/gif_demo/pictures/Picture6.png)
 
 Before we move forward, we deploy rigid registration through an expectation maximization algorithm using the pycpd library. In short, it finds the best possible match between the student and instructor without scaling the student coordinates or changing the angles between the student's limbs in the process. Now that we have the 3D keypoints across all frames, we then create a module for correcting the student's pose in reference to an instructor. This will consist of finding the angles between adjacent limbs for the instructor and student, and then getting the sum of absolute angular differences to create an error score for a frame. For each of the frames of videos of teacher and students, we calculated such an error score that represents the absolute difference between the posture of the teacher and the student. Then we define the speed of the movements as the sum of the distances of the movement made by both hands and both feet of the teacher in one second. After that, we calculate the reciprocal of the speed to derive the dynamic importance of the movements and take the rolling average to smooth the importance scores.Then, for each frame, we multiply the error score with its importance and then scale the results to the range of 0-100 the to get the final error score. Finally, the evaluation score for each frame is 100 minus the final error score. A higher evaluation score means the student is doing better. In addition, an animation is created which shows the overlap between student and instructor, as well as the overall evaluation score for a particular frame (smoothed out across multiple frames).
+![Workflow for auto-coaching mode](https://github.com/miaowu128/Joblogic-X/blob/main/gif_demo/pictures/Picture7.jpg)
 
 ## Rule-based-coaching Mode 
 The Rule-based-coaching mode aims to help the user fine tune a specific part of the body in reference to the standard pose. The function works by highlighting the bodyparts/limbs that do not match the standards of the correct form. The application achieves this function by calculating the angle between the adjacent limbs that make up the subject body part at a particular moment in the set, and compare it to a predefined, standard value. If the angle is off by a certain tolerance value then the skeletal outline of the subject body part will be highlighted.
+![Workflow for rule-based-coaching mode](https://github.com/miaowu128/Joblogic-X/blob/main/gif_demo/pictures/Picture8.jpg)
  
-## Competition Mode 
+ ## Competition Mode 
 Based on the scoring systems of the above two coaching modes, we developed an additional function, competition mode. For this mode, the input would be the video of two users who want to compete against each other, and then the input videos will go through the same process as that of auto-coaching or rule-based-coaching (based on user's choice) and generate two series of evaluation scores for the two input videos respectively. The user who has a higher average score will be the winner in the competition.
+![Workflow for competition Mode ](https://github.com/miaowu128/Joblogic-X/blob/main/gif_demo/pictures/Picture9.jpg)
 
 ## Fine Tuning 
 The model works well with the exercise with simple movements. But the movements can be complicated sometimes, especially for dancing and HIIT exercises. During exercises the body parts can rotate, move so some of the other parts are blocked from the camera. The prediction results are not accurate without most of the body parts exposed in the camera view. The popular exercise movements videos with blocked body parts can be collected and labeled so with the blocked joints can be inferred.
